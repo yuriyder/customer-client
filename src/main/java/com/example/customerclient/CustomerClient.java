@@ -15,11 +15,10 @@ public class CustomerClient {
         this.restTemplate = restTemplate;
     }
 
-    public Collection<Customer> getAllCustomers() {
-        ParameterizedTypeReference<Collection <Customer>> ptr = new ParameterizedTypeReference<Collection<Customer>>() {
-        };
+    public Customer getCustomer(Long id) {
+        ParameterizedTypeReference<Customer> cmr = new ParameterizedTypeReference<Customer>() {};
 
-        ResponseEntity<Collection<Customer>> responseEntity = restTemplate.exchange("http://localhost:8081/customers", HttpMethod.GET, null, ptr);
+        ResponseEntity<Customer> responseEntity = restTemplate.exchange("http://localhost:8081/client/" + id, HttpMethod.GET, null, cmr);
         return responseEntity.getBody();
     }
 }

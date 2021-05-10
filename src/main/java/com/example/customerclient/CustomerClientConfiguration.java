@@ -12,8 +12,8 @@ public class CustomerClientConfiguration {
         return new RestTemplate();
     }
 
-//    @Bean
-//    CustomerClient client (RestTemplate restTemplate) {
-//        return new CustomerClient(restTemplate);
-//    }
+    @Bean
+    CustomerClient client (RestTemplate restTemplate) {
+        return new CustomerClient(restTemplate);
+    }
 }
