@@ -18,7 +18,7 @@ public class CustomerClient {
     public Customer getCustomer(Long id) {
         ParameterizedTypeReference<Customer> cmr = new ParameterizedTypeReference<Customer>() {};
 
-        ResponseEntity<Customer> responseEntity = restTemplate.exchange("http://localhost:8081/client/" + id, HttpMethod.GET, null, cmr);
+        ResponseEntity<Customer> responseEntity = restTemplate.exchange("http://localhost:8081/customer/" + id, HttpMethod.GET, null, cmr);
         return responseEntity.getBody();
     }
 }

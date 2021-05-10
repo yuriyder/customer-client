@@ -32,7 +32,7 @@ public class CustomerClientClassicTest {
 
         final Long givenCustomerId = 1L;
 
-        WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/client/1"))
+        WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/customer/1"))
                 .willReturn(
                         WireMock.aResponse()
                                 .withStatus(200)
@@ -44,6 +44,6 @@ public class CustomerClientClassicTest {
 
         BDDAssertions.then(actualCustomer.getId()).isEqualTo(1L);
         BDDAssertions.then(actualCustomer.getFirstName()).isEqualTo("Michael");
-        BDDAssertions.then(actualCustomer.getSurname()).isEqualTo("Jordan");
+        BDDAssertions.then(actualCustomer.getLastName()).isEqualTo("Jordan");
     }
 }

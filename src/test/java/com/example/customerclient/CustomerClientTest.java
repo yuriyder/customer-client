@@ -17,7 +17,7 @@ public class CustomerClientTest {
     private CustomerClient client;
 
     @Test
-    public void get_customer_from_service_contract() throws Exception {
+    public void get_customer_from_service_contract() {
 
         final Long givenCustomerId = 1L;
 
@@ -25,6 +25,6 @@ public class CustomerClientTest {
 
         BDDAssertions.then(actualCustomer.getId()).isEqualTo(1L);
         BDDAssertions.then(actualCustomer.getFirstName()).isEqualTo("Michael");
-        BDDAssertions.then(actualCustomer.getSurname()).isEqualTo("Jordan");
+        BDDAssertions.then(actualCustomer.getLastName()).isEqualTo("Jordan");
     }
 }
