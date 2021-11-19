@@ -10,7 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest(classes = CustomerClientApplication.class)
-@AutoConfigureStubRunner (ids ="com.example:customer-service:+:8081", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.REMOTE,
+        repositoryRoot = "git://git@bitbucket.org:iviadevelopment/service-contracts.git",
+        ids = { "com.example:customer-service:0.0.1-SNAPSHOT:8081"})
 public class CustomerClientTest {
 
     @Autowired
